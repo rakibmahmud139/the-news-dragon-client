@@ -5,12 +5,12 @@ import QZone3 from '../../../assets/qZone3.png';
 
 const QZone = () => {
     return (
-        <div className='bg-light text-center my-4 py-4'>
+        <div className='bg-light text-center my-4 py-4 w-100'>
             <h3>Q-Zone</h3>
             <div>
-                <img src={QZone1} alt="" />
-                <img src={QZone2} alt="" />
-                <img src={QZone3} alt="" />
+                <img className='w-100 p-2' src={QZone1} alt="" />
+                <img className='w-100 p-2' src={QZone2} alt="" />
+                <img className='w-100 p-2' src={QZone3} alt="" />
             </div>
         </div>
     );
