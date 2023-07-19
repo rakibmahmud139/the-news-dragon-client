@@ -16,7 +16,7 @@ const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Link className='text-decoration-none text-primary ms-3' to='/'>Home</Link>
+                            <Link className='text-decoration-none text-primary ms-3' to='/category/0'>Home</Link>
                             <Link className='text-decoration-none text-primary ms-3' to='/about'>About</Link>
                             <Link className='text-decoration-none text-primary ms-3' to='/career'>Career</Link>
                         </Nav>
@@ -25,7 +25,7 @@ const NavigationBar = () => {
                                 <FaUserCircle style={{ fontSize: '2rem' }} />
 
                             }
-                            
+
                             {
                                 user ?
                                     <Button variant="secondary">Logout</Button>
