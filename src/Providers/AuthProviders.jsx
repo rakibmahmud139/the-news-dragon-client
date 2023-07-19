@@ -8,23 +8,27 @@ const auth = getAuth(app);
 
 const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(true);
 
 
 
     // Create User
     const createUser = (email, password) => {
+        setLoader(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
     // SignI
     const signIn = (email, password) => {
+        setLoader(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
 
     // Logout
     const logout = () => {
+        setLoader(true);
         return signOut(auth);
     }
 
@@ -33,6 +37,7 @@ const AuthProviders = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
+            setLoader(false);
         })
 
         return () => {
@@ -45,6 +50,7 @@ const AuthProviders = ({ children }) => {
     // Contest Info
     const AuthInfo = {
         user,
+        loader,
         createUser,
         signIn,
         logout
